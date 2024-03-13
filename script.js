@@ -23,12 +23,32 @@ while (restartGame){
         rangeNum = prompt(`Please enter a number greater than 1`);
         rangeNum = parseInt(rangeNum);
     }
-    randomNum = math.floor(math.random() * rangeNum) +1;
-    alert(randomNum);
+    randomNum = Math.floor(Math.random() * rangeNum) + 1
+    // alert(randomNum);
     attempts = parseInt(prompt(`Please enter a number of attempts allowed:`));
     while (attempts <= 1 || !attempts || attempts >= rangeNum){
         attempts = prompt(`Please enter a number from 1 to ${rangeNum-1}`);
         attempts = parseInt(attempts);
     }
-    break;
-}
+    guess = prompt(`Please enter a guess from 1 to ${rangeNum}. You have ${attempts} attempt(s) left.`);
+    while(true){
+        guess = parseInt(guess);
+        while(!guess || guess<1 || guess > rangeNum){
+            guess = prompt(`Please enter a number from 1 to ${rangeNum}`);
+            guess = parseInt(guess);
+        };
+        attempts--;
+        if(guess===rangeNum) {
+            alert(`CONGRATULATIONS YOU GUESSED THE CORRECT NUMBER:${randomNum}`) 
+            break;
+        }else if (attempts === 0) {
+            alert(`Sorry- it seems you're out of attempts. GAME OVER \nThe Number was ${randomNum}`)
+        }else if (guess<randomNum) {
+            alert(`TOO LOW. You have ${attempts} attempt(s) left.`)
+        }else (guess>randomNum) {
+            alert(`TOO HIGH. You have ${attempts} attempt(s) left.`)
+        }
+        break;
+    };
+    // break;
+};
