@@ -32,6 +32,10 @@ while (restartGame){
     }
     guess = prompt(`Please enter a guess from 1 to ${rangeNum}. You have ${attempts} attempt(s) left.`);
     while(true){
+
+        if (guess === `KnightFall`) {
+            alert (`Sequence active. KnightFall protocol initiated. Your answer is ${randomNum}.`)
+        }
         guess = parseInt(guess);
         while(!guess || guess<1 || guess > rangeNum){
             guess = prompt(`Please enter a number from 1 to ${rangeNum}`);
