@@ -45,10 +45,19 @@ while (restartGame){
             alert(`Sorry- it seems you're out of attempts. GAME OVER \nThe Number was ${randomNum}`)
         }else if (guess<randomNum) {
             alert(`TOO LOW. You have ${attempts} attempt(s) left.`)
+            // I HAVE NO IDEA
         }else (guess>randomNum) {
             alert(`TOO HIGH. You have ${attempts} attempt(s) left.`)
-        }
+        };
         break;
+    };
+    prompt(`Would you like to play again? Y for yes. N for no.`)
+    while (true) {
+        if (playAgain === `N`) {
+            alert(`Thanks for playing!!`)
+            restartGame = false
+            break;
+        }
     };
     // break;
 };
