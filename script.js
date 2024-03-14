@@ -39,24 +39,28 @@ while (restartGame){
         };
         attempts--;
         if(guess===rangeNum) {
-            alert(`CONGRATULATIONS YOU GUESSED THE CORRECT NUMBER:${randomNum}`) 
+            alert(`CONGRATULATIONS YOU GUESSED THE CORRECT NUMBER:${randomNum}`);
             break;
         }else if (attempts === 0) {
-            alert(`Sorry- it seems you're out of attempts. GAME OVER \nThe Number was ${randomNum}`)
+            alert(`Sorry- it seems you're out of attempts. GAME OVER \nThe Number was ${randomNum}`);
         }else if (guess<randomNum) {
-            alert(`TOO LOW. You have ${attempts} attempt(s) left.`)
+            alert(`TOO LOW. You have ${attempts} attempt(s) left.`);
             // I HAVE NO IDEA
         }else (guess>randomNum) {
-            alert(`TOO HIGH. You have ${attempts} attempt(s) left.`)
+            alert(`TOO HIGH. You have ${attempts} attempt(s) left.`);
         };
         break;
     };
-    prompt(`Would you like to play again? Y for yes. N for no.`)
+    prompt(`Would you like to play again? Y for yes. N for no.`);
     while (true) {
-        if (playAgain === `N`) {
-            alert(`Thanks for playing!!`)
-            restartGame = false
+        if (playAgain.toUpperCase() === `N`) {
+            alert(`Thanks for playing!!`);
+            restartGame = false;
             break;
+        }else if (playAgain.toUpperCase() === `Y`) {
+            break;
+        }else {
+            playAgain = prompt(`Please enter Y or N.`)
         }
     };
     // break;
